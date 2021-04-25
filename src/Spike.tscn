@@ -1,0 +1,10 @@
+[gd_scene format=2]
+
+[node name="Spike" type="Spatial"]
+
+[node name="CSGCylinder" type="CSGCylinder" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.5, 0 )
+radius = 5.0
+height = 5.0
+sides = 4
+cone = true

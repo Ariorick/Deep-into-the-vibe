@@ -1,0 +1,83 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://src/UI/HealthBar/HealthDisplay.tscn" type="PackedScene" id=1]
+[ext_resource path="res://src/UI/Ui.gd" type="Script" id=3]
+
+[sub_resource type="Animation" id=1]
+resource_name = "hit"
+length = 0.3
+step = 0.01
+tracks/0/type = "value"
+tracks/0/path = NodePath("HitEffect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.04, 0.18 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 0.980392, 0.168627, 0.454902, 0.478431 ), Color( 1, 1, 1, 0 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("HealthDisplay:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.04, 0.3 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 4, 4, 4, 1 ), Color( 1, 1, 1, 1 ) ]
+}
+
+[sub_resource type="Animation" id=2]
+resource_name = "show_restart"
+tracks/0/type = "value"
+tracks/0/path = NodePath("Label:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.7, 1 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+
+[node name="Ui" type="CanvasLayer"]
+script = ExtResource( 3 )
+
+[node name="HealthDisplay" parent="." instance=ExtResource( 1 )]
+margin_left = 17.629
+margin_top = 8.65745
+margin_right = 17.629
+margin_bottom = 8.65745
+rect_scale = Vector2( 0.5, 0.3 )
+
+[node name="HitEffect" type="ColorRect" parent="."]
+margin_left = -94.0
+margin_top = -42.0
+margin_right = 522.0
+margin_bottom = 333.0
+color = Color( 1, 1, 1, 0 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/hit = SubResource( 1 )
+anims/show_restart = SubResource( 2 )
+
+[node name="Label" type="Label" parent="."]
+modulate = Color( 1, 1, 1, 0 )
+margin_left = 164.347
+margin_top = 105.16
+margin_right = 316.347
+margin_bottom = 137.16
+text = "PRESS R TO RESTART"
+__meta__ = {
+"_edit_use_anchors_": false
+}

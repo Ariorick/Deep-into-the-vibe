@@ -1,0 +1,15 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://src/Level/World.tscn" type="PackedScene" id=2]
+[ext_resource path="res://src/Main.gd" type="Script" id=3]
+[ext_resource path="res://src/UI/Ui.tscn" type="PackedScene" id=4]
+
+[node name="Main" type="Spatial"]
+script = ExtResource( 3 )
+
+[node name="World" parent="." instance=ExtResource( 2 )]
+
+[node name="Ui" parent="." instance=ExtResource( 4 )]
+
+[node name="CanvasModulate2" type="CanvasModulate" parent="."]
+visible = false

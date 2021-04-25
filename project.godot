@@ -1,0 +1,239 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=4
+
+_global_script_classes=[ {
+"base": "Node2D",
+"class": "AlarmedEmote",
+"language": "GDScript",
+"path": "res://src/Effects/AlarmedEmote.gd"
+}, {
+"base": "Node",
+"class": "ArrayUtils",
+"language": "GDScript",
+"path": "res://src/Utils/ArrayUtils.gd"
+}, {
+"base": "AudioStreamPlayer",
+"class": "AudioAnalyzer",
+"language": "GDScript",
+"path": "res://src/Level/AudioAnalyzer.gd"
+}, {
+"base": "Spatial",
+"class": "Background",
+"language": "GDScript",
+"path": "res://src/Level/Background.gd"
+}, {
+"base": "Node2D",
+"class": "ButtonHint",
+"language": "GDScript",
+"path": "res://src/UI/Hint/ButtonHint.gd"
+}, {
+"base": "Node2D",
+"class": "ButtonHintActivator",
+"language": "GDScript",
+"path": "res://src/UI/Hint/ButtonHintActivator.gd"
+}, {
+"base": "Label",
+"class": "DamageLabel",
+"language": "GDScript",
+"path": "res://src/UI/Damage/DamageLabel.gd"
+}, {
+"base": "Reference",
+"class": "Drawing",
+"language": "GDScript",
+"path": "res://src/Utils/Drawing.gd"
+}, {
+"base": "Node2D",
+"class": "FireEffect",
+"language": "GDScript",
+"path": "res://src/Effects/FireEffect.gd"
+}, {
+"base": "CanvasLayer",
+"class": "FpsLabel",
+"language": "GDScript",
+"path": "res://src/UI/FPSLabel.gd"
+}, {
+"base": "Reference",
+"class": "Noise",
+"language": "GDScript",
+"path": "res://src/Utils/Noise.gd"
+}, {
+"base": "Node2D",
+"class": "ParticlesBundle",
+"language": "GDScript",
+"path": "res://src/Effects/ParticlesBundle.gd"
+}, {
+"base": "KinematicBody",
+"class": "Player",
+"language": "GDScript",
+"path": "res://src/Player/Player.gd"
+}, {
+"base": "Reference",
+"class": "PlayerInput",
+"language": "GDScript",
+"path": "res://src/Player/PlayerInput.gd"
+}, {
+"base": "Node2D",
+"class": "PlayerPosition",
+"language": "GDScript",
+"path": "res://src/Level/PlayerPosition.gd"
+}, {
+"base": "Spatial",
+"class": "Square",
+"language": "GDScript",
+"path": "res://src/Square.gd"
+}, {
+"base": "Area2D",
+"class": "SwordArea",
+"language": "GDScript",
+"path": "res://src/Player/SwordArea.gd"
+}, {
+"base": "Sprite",
+"class": "TextureMap",
+"language": "GDScript",
+"path": "res://src/Level/MapTexture.gd"
+} ]
+_global_script_class_icons={
+"AlarmedEmote": "",
+"ArrayUtils": "",
+"AudioAnalyzer": "",
+"Background": "",
+"ButtonHint": "",
+"ButtonHintActivator": "",
+"DamageLabel": "",
+"Drawing": "",
+"FireEffect": "",
+"FpsLabel": "",
+"Noise": "",
+"ParticlesBundle": "",
+"Player": "",
+"PlayerInput": "",
+"PlayerPosition": "",
+"Square": "",
+"SwordArea": "",
+"TextureMap": ""
+}
+
+[application]
+
+config/name="Deep into the vibe"
+run/main_scene="res://src/Main.tscn"
+config/icon="res://assets/icon.png"
+
+[autoload]
+
+GameManager="*res://src/GameManager/GameManager.gd"
+CameraManager="*res://src/GameManager/CameraManager.gd"
+SoundManager="*res://src/GameManager/SoundManager.gd"
+TreeModulationNoise="*res://src/Level/TreeModulationNoise.gd"
+SceneChanger="*res://src/GameManager/SceneChanger.tscn"
+Random="*res://src/Utils/Random.gd"
+LightZoneManager="*res://src/GameManager/LightZoneManager.gd"
+
+[debug]
+
+settings/profiler/max_functions=65535
+
+[display]
+
+window/size/width=480
+window/size/height=270
+window/size/test_width=960
+window/size/test_height=540
+window/stretch/mode="viewport"
+window/stretch/aspect="keep"
+
+[editor_plugins]
+
+enabled=PoolStringArray(  )
+
+[gui]
+
+common/snap_controls_to_pixels=false
+
+[importer_defaults]
+
+texture={
+"compress/bptc_ldr": 0,
+"compress/hdr_mode": 0,
+"compress/lossy_quality": 0.7,
+"compress/mode": 0,
+"compress/normal_map": 0,
+"detect_3d": false,
+"flags/anisotropic": false,
+"flags/filter": false,
+"flags/mipmaps": false,
+"flags/repeat": 0,
+"flags/srgb": 2,
+"process/HDR_as_SRGB": false,
+"process/fix_alpha_border": true,
+"process/invert_color": false,
+"process/premult_alpha": false,
+"size_limit": 0,
+"stream": false,
+"svg/scale": 1.0
+}
+
+[input]
+
+right={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":16777233,"unicode":0,"echo":false,"script":null)
+, Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":68,"unicode":0,"echo":false,"script":null)
+ ]
+}
+left={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":16777231,"unicode":0,"echo":false,"script":null)
+, Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":65,"unicode":0,"echo":false,"script":null)
+ ]
+}
+down={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":16777234,"unicode":0,"echo":false,"script":null)
+, Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":83,"unicode":0,"echo":false,"script":null)
+ ]
+}
+up={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":16777232,"unicode":0,"echo":false,"script":null)
+, Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":87,"unicode":0,"echo":false,"script":null)
+ ]
+}
+restart={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":82,"unicode":0,"echo":false,"script":null)
+ ]
+}
+
+[layer_names]
+
+2d_physics/layer_1="player"
+2d_physics/layer_2="enemy"
+2d_physics/layer_3="walls"
+2d_physics/layer_4="player_projectile"
+2d_physics/layer_5="enemy_hitbox"
+2d_physics/layer_6="enemy_damage_area"
+2d_physics/layer_7="player_pick_area"
+2d_physics/layer_10="tree"
+
+[network]
+
+limits/debugger_stdout/max_chars_per_second=9999999
+
+[physics]
+
+2d/default_linear_damp=10.0
+
+[rendering]
+
+quality/driver/driver_name="GLES2"
+quality/2d/use_pixel_snap=true
+environment/default_clear_color=Color( 0, 0, 0, 1 )
+environment/default_environment="res://default_env.tres"
