@@ -83,7 +83,7 @@ func spawn_heart():
 	$HeartContainer.rotation = Vector3(0, 0, PI/2 * (spikes_on + 2) )
 	var heart = HeartScene.instance()
 	$HeartContainer.add_child(heart)
-	heart.translation = Vector3(0, -RADIUS, DEPTH/2)
+	heart.translation = Vector3(0, -RADIUS, 0)
 
 func spawn_coin():
 	if spikes_on < 0 :
@@ -93,7 +93,7 @@ func spawn_coin():
 	$CoinContainer.rotation = Vector3(0, 0, PI/2 * (spikes_on + 2) )
 	var coin = CoinScene.instance()
 	$CoinContainer.add_child(coin)
-	coin.translation = Vector3(0, -RADIUS, DEPTH/2)
+	coin.translation = Vector3(0, -RADIUS,0)
 
 func _on_Timer_timeout():
 	queue_free()
