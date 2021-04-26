@@ -58,5 +58,7 @@ material/0 = SubResource( 5 )
 
 [node name="HeartContainer" type="Spatial" parent="."]
 
+[node name="CoinContainer" type="Spatial" parent="."]
+
 [node name="SpikeContainer" type="Spatial" parent="."]
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

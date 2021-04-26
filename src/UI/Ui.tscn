@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://src/UI/HealthBar/HealthDisplay.tscn" type="PackedScene" id=1]
+[ext_resource path="res://assets/new_theme.tres" type="Theme" id=2]
 [ext_resource path="res://src/UI/Ui.gd" type="Script" id=3]
 
 [sub_resource type="Animation" id=1]
@@ -47,6 +48,21 @@ tracks/0/keys = {
 "values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
 }
 
+[sub_resource type="Animation" id=3]
+resource_name = "show_thanks"
+tracks/0/type = "value"
+tracks/0/path = NodePath("Thanks:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0.7, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+
 [node name="Ui" type="CanvasLayer"]
 script = ExtResource( 3 )
 
@@ -71,13 +87,43 @@ __meta__ = {
 anims/hit = SubResource( 1 )
 anims/show_restart = SubResource( 2 )
 
+[node name="FinishingAnimationPlayer" type="AnimationPlayer" parent="."]
+anims/show_thanks = SubResource( 3 )
+
 [node name="RestartLabel" type="Label" parent="."]
 modulate = Color( 1, 1, 1, 0 )
-margin_left = 164.347
-margin_top = 105.16
-margin_right = 316.347
-margin_bottom = 137.16
+margin_left = 119.026
+margin_top = 42.4391
+margin_right = 353.026
+margin_bottom = 74.4391
+theme = ExtResource( 2 )
 text = "PRESS R TO RESTART"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Thanks" type="Label" parent="."]
+modulate = Color( 1, 1, 1, 0 )
+margin_left = 49.7907
+margin_top = 89.4744
+margin_right = 318.791
+margin_bottom = 201.474
+theme = ExtResource( 2 )
+text = "THANKS  FOR PLAYING
+YOUR SCORE IS "
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Coins" type="Label" parent="."]
+margin_left = 407.888
+margin_top = 7.95168
+margin_right = 463.888
+margin_bottom = 21.9517
+theme = ExtResource( 2 )
+text = "0"
 __meta__ = {
 "_edit_use_anchors_": false
 }

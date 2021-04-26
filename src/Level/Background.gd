@@ -45,3 +45,6 @@ func rgb(r: float, g: float, b: float) -> Color:
 	return Color(r / 255.0, g / 255.0, b / 255.0)
 
 
+func _on_MusicTimer_timeout():
+	stopped = true
+	GameManager.finished()

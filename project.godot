@@ -24,6 +24,11 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://src/Level/Background.gd"
 }, {
+"base": "Area",
+"class": "Coin",
+"language": "GDScript",
+"path": "res://src/Player/Coin.gd"
+}, {
 "base": "Reference",
 "class": "Drawing",
 "language": "GDScript",
@@ -33,6 +38,11 @@ _global_script_classes=[ {
 "class": "FpsLabel",
 "language": "GDScript",
 "path": "res://src/UI/FPSLabel.gd"
+}, {
+"base": "Area",
+"class": "Heart",
+"language": "GDScript",
+"path": "res://src/Player/Heart.gd"
 }, {
 "base": "Reference",
 "class": "Noise",
@@ -68,8 +78,10 @@ _global_script_class_icons={
 "ArrayUtils": "",
 "AudioAnalyzer": "",
 "Background": "",
+"Coin": "",
 "Drawing": "",
 "FpsLabel": "",
+"Heart": "",
 "Noise": "",
 "Player": "",
 "PlayerInput": "",

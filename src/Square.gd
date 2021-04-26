@@ -3,6 +3,7 @@ class_name Square
 
 const SpikesScene = preload("res://src/Spikes.tscn")
 const HeartScene = preload("res://src/Player/Heart.tscn")
+const CoinScene = preload("res://src/Player/Coin.tscn")
 const ROTATION_DISTANCE = 30.0
 
 const WIDTH = 50
@@ -18,12 +19,15 @@ var width := 0.0
 
 var start_time = 0.0
 var spikes_on = -1
+var spawned_heart = false
 
 func _ready():
 	start_time = OS.get_ticks_msec()
 	if with_spikes:
 		spawn_spikes()
 	spawn_heart()
+	if not spawned_heart:
+		spawn_coin()
 	$Timer.wait_time = 4
 	$Timer.start()
 	current_size = start_size
@@ -73,12 +77,23 @@ func spawn_spikes():
 func spawn_heart():
 	if spikes_on < 0 or not GameManager.health_is_not_max():
 		return
-	if Random.boolean(0.7):
+	if Random.boolean(0.9):
 		return
+	spawned_heart = true
 	$HeartContainer.rotation = Vector3(0, 0, PI/2 * (spikes_on + 2) )
 	var heart = HeartScene.instance()
 	$HeartContainer.add_child(heart)
 	heart.translation = Vector3(0, -RADIUS, DEPTH/2)
+
+func spawn_coin():
+	if spikes_on < 0 :
+		return
+	if Random.boolean(0.6):
+		return
+	$CoinContainer.rotation = Vector3(0, 0, PI/2 * (spikes_on + 2) )
+	var coin = CoinScene.instance()
+	$CoinContainer.add_child(coin)
+	coin.translation = Vector3(0, -RADIUS, DEPTH/2)
 
 func _on_Timer_timeout():
 	queue_free()

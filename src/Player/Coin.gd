@@ -1,10 +1,10 @@
 extends Area
-class_name Heart
+class_name Coin
 
 
 func _on_Heart_body_exited(body):
 	if body is Player:
-		GameManager.player_pick_health()
+		GameManager.player_picked_coin()
 		$AnimationPlayer.play("picked")
 
 

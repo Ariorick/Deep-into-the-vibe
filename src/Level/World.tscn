@@ -85,7 +85,7 @@ bus = "Analyze"
 script = ExtResource( 3 )
 
 [node name="Timer" type="Timer" parent="Background/AudioAnalyzer"]
-wait_time = 0.001
+wait_time = 0.009
 autostart = true
 
 [node name="SpawnPlayerTimer" type="Timer" parent="."]
@@ -144,6 +144,11 @@ collision_mask = 0
 
 [node name="CollisionShape" type="CollisionShape" parent="Level walls/Right"]
 shape = SubResource( 8 )
+
+[node name="MusicTimer" type="Timer" parent="."]
+wait_time = 5.0
+one_shot = true
+autostart = true
 [connection signal="timeout" from="Background/SpikeSpawnTimer" to="Background" method="_on_SquareSpawnTimer_timeout"]
 [connection signal="timeout" from="Background/RegularPathTimer" to="Background" method="_on_RegularPathTimer_timeout"]
 [connection signal="high_beat" from="Background/AudioAnalyzer" to="Background" method="_on_AudioAnalyzer_high_beat"]
@@ -151,3 +156,5 @@ shape = SubResource( 8 )
 [connection signal="middle_beat" from="Background/AudioAnalyzer" to="Background" method="_on_AudioAnalyzer_middle_beat"]
 [connection signal="timeout" from="Background/AudioAnalyzer/Timer" to="Background/AudioAnalyzer" method="_on_Timer_timeout"]
 [connection signal="timeout" from="SpawnPlayerTimer" to="." method="_on_SpawnPlayerTimer_timeout"]
+[connection signal="timeout" from="MusicTimer" to="Background/AudioAnalyzer" method="_on_MusicTimer_timeout"]
+[connection signal="timeout" from="MusicTimer" to="Background" method="_on_MusicTimer_timeout"]

@@ -17,6 +17,7 @@ onready var spectrum = AudioServer.get_bus_effect_instance(1, 2)
 var max_db = -0
 var min_db = -40
 var prev_beats := Dictionary()
+var started := false
 
 func _ready():
 	max_db += volume_db
@@ -24,8 +25,9 @@ func _ready():
 	
 
 func _process(delta):
-	if not playing and OS.get_ticks_msec() > 100:
+	if not started and OS.get_ticks_msec() > 100:
 		playing = true
+		started = true
 
 func _on_Timer_timeout():
 	analyse()
@@ -58,3 +60,5 @@ func value_for_frequency(start, end) -> float:
 	mag = (mag - min_db) / (max_db - min_db)
 	return pow(mag * 7, 2)
 
+func _on_MusicTimer_timeout():
+	playing = false
