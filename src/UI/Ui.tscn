@@ -35,7 +35,7 @@ tracks/1/keys = {
 [sub_resource type="Animation" id=2]
 resource_name = "show_restart"
 tracks/0/type = "value"
-tracks/0/path = NodePath("Label:modulate")
+tracks/0/path = NodePath("RestartLabel:modulate")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -71,7 +71,7 @@ __meta__ = {
 anims/hit = SubResource( 1 )
 anims/show_restart = SubResource( 2 )
 
-[node name="Label" type="Label" parent="."]
+[node name="RestartLabel" type="Label" parent="."]
 modulate = Color( 1, 1, 1, 0 )
 margin_left = 164.347
 margin_top = 105.16

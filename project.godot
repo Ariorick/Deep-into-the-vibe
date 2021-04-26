@@ -9,11 +9,6 @@
 config_version=4
 
 _global_script_classes=[ {
-"base": "Node2D",
-"class": "AlarmedEmote",
-"language": "GDScript",
-"path": "res://src/Effects/AlarmedEmote.gd"
-}, {
 "base": "Node",
 "class": "ArrayUtils",
 "language": "GDScript",
@@ -29,30 +24,10 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://src/Level/Background.gd"
 }, {
-"base": "Node2D",
-"class": "ButtonHint",
-"language": "GDScript",
-"path": "res://src/UI/Hint/ButtonHint.gd"
-}, {
-"base": "Node2D",
-"class": "ButtonHintActivator",
-"language": "GDScript",
-"path": "res://src/UI/Hint/ButtonHintActivator.gd"
-}, {
-"base": "Label",
-"class": "DamageLabel",
-"language": "GDScript",
-"path": "res://src/UI/Damage/DamageLabel.gd"
-}, {
 "base": "Reference",
 "class": "Drawing",
 "language": "GDScript",
 "path": "res://src/Utils/Drawing.gd"
-}, {
-"base": "Node2D",
-"class": "FireEffect",
-"language": "GDScript",
-"path": "res://src/Effects/FireEffect.gd"
 }, {
 "base": "CanvasLayer",
 "class": "FpsLabel",
@@ -63,11 +38,6 @@ _global_script_classes=[ {
 "class": "Noise",
 "language": "GDScript",
 "path": "res://src/Utils/Noise.gd"
-}, {
-"base": "Node2D",
-"class": "ParticlesBundle",
-"language": "GDScript",
-"path": "res://src/Effects/ParticlesBundle.gd"
 }, {
 "base": "KinematicBody",
 "class": "Player",
@@ -89,34 +59,22 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://src/Square.gd"
 }, {
-"base": "Area2D",
-"class": "SwordArea",
-"language": "GDScript",
-"path": "res://src/Player/SwordArea.gd"
-}, {
 "base": "Sprite",
 "class": "TextureMap",
 "language": "GDScript",
 "path": "res://src/Level/MapTexture.gd"
 } ]
 _global_script_class_icons={
-"AlarmedEmote": "",
 "ArrayUtils": "",
 "AudioAnalyzer": "",
 "Background": "",
-"ButtonHint": "",
-"ButtonHintActivator": "",
-"DamageLabel": "",
 "Drawing": "",
-"FireEffect": "",
 "FpsLabel": "",
 "Noise": "",
-"ParticlesBundle": "",
 "Player": "",
 "PlayerInput": "",
 "PlayerPosition": "",
 "Square": "",
-"SwordArea": "",
 "TextureMap": ""
 }
 

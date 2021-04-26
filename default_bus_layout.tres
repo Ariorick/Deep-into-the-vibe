@@ -1,4 +1,4 @@
-[gd_resource type="AudioBusLayout" load_steps=5 format=2]
+[gd_resource type="AudioBusLayout" load_steps=6 format=2]
 
 [sub_resource type="AudioEffectDelay" id=1]
 resource_name = "Delay"
@@ -7,6 +7,10 @@ tap1/delay_ms = 570.0
 tap1/level_db = 0.0
 tap1/pan = 0.5
 tap2/active = false
+
+[sub_resource type="AudioEffectFilter" id=5]
+resource_name = "Filter"
+cutoff_hz = 700.0
 
 [sub_resource type="AudioEffectEQ" id=2]
 resource_name = "EQ"
@@ -29,9 +33,11 @@ release_ms = 300.0
 resource_name = "SpectrumAnalyzer"
 
 [resource]
-bus/0/volume_db = -0.923751
+bus/0/volume_db = -3.32682
 bus/0/effect/0/effect = SubResource( 1 )
 bus/0/effect/0/enabled = true
+bus/0/effect/1/effect = SubResource( 5 )
+bus/0/effect/1/enabled = false
 bus/1/name = "Analyze"
 bus/1/solo = false
 bus/1/mute = false
