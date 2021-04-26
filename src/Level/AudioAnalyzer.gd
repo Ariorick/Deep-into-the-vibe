@@ -12,7 +12,7 @@ export(float) var bass_sensitivity: float = 1
 export(float) var middle_sensitivity: float = 1
 export(float) var high_sensitivity: float = 1
 
-onready var spectrum = AudioServer.get_bus_effect_instance(1, 2)
+onready var spectrum = AudioServer.get_bus_effect_instance(0, 0)
 
 var max_db = -0
 var min_db = -40

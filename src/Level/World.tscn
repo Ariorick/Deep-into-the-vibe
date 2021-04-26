@@ -81,7 +81,6 @@ autostart = true
 
 [node name="AudioAnalyzer" type="AudioStreamPlayer" parent="Background"]
 stream = ExtResource( 4 )
-bus = "Analyze"
 script = ExtResource( 3 )
 
 [node name="Timer" type="Timer" parent="Background/AudioAnalyzer"]
@@ -156,5 +155,5 @@ autostart = true
 [connection signal="middle_beat" from="Background/AudioAnalyzer" to="Background" method="_on_AudioAnalyzer_middle_beat"]
 [connection signal="timeout" from="Background/AudioAnalyzer/Timer" to="Background/AudioAnalyzer" method="_on_Timer_timeout"]
 [connection signal="timeout" from="SpawnPlayerTimer" to="." method="_on_SpawnPlayerTimer_timeout"]
-[connection signal="timeout" from="MusicTimer" to="Background/AudioAnalyzer" method="_on_MusicTimer_timeout"]
 [connection signal="timeout" from="MusicTimer" to="Background" method="_on_MusicTimer_timeout"]
+[connection signal="timeout" from="MusicTimer" to="Background/AudioAnalyzer" method="_on_MusicTimer_timeout"]
