@@ -6,6 +6,8 @@ const WALK_FORCE = 70
 const JUMP_FORCE = 210
 const GRAVITY_FORCE = 10.0
 
+const CHANGE_DIRECTION_TIME := 0.3
+
 const RADIUS = 40
 
 var in_air = true
@@ -20,8 +22,10 @@ func _ready():
 
 func move_to(pos: Vector3):
 	var new_rotation = get_rotation_for(Vector2(pos.x, pos.y))
-	$Tween.interpolate_property(self, "translation", translation, pos, 0.5, Tween.TRANS_CUBIC, Tween.EASE_OUT)
-	$Tween.interpolate_property(self, "rotation", rotation, new_rotation, 0.5, Tween.TRANS_CUBIC, Tween.EASE_OUT)
+	$Tween.interpolate_property(self, "translation", translation, pos, 
+		CHANGE_DIRECTION_TIME, Tween.TRANS_CUBIC, Tween.EASE_OUT)
+	$Tween.interpolate_property(self, "rotation", rotation, new_rotation, 
+		CHANGE_DIRECTION_TIME, Tween.TRANS_CUBIC, Tween.EASE_OUT)
 	$Tween.start()
 	in_air = true
 
@@ -38,7 +42,7 @@ func get_rotation_for(direction: Vector2) -> Vector3:
 
 func _physics_process(delta):
 	if not in_air:
-		var direction = PlayerInput.get_direction().normalized()
+		var direction = PlayerInput.direction_just_pressed()
 		var desired_place = Vector3(direction.x, direction.y, 0) * RADIUS
 		if desired_place != Vector3.ZERO and translation != desired_place:
 			move_to(desired_place)
